@@ -22,10 +22,10 @@ chacha20poly1305 = { version = "0.10.1", features = ["std"] }
 crypto-common = { version = "0.1.6", features = ["std"] }
 aead = { version = "0.5.2", features = ["std"] }
 opus = "0.3.0"
-xx-core = { path = "../xx-core" }
-xx-pulse = { path = "../xx-pulse" }
-xx-url = { path = "../xx-url" }
-xx-mpeg = { path = "../xx-mpeg" }
+xx-core = { git = "https://github.com/davidzeng0/xx-core" }
+xx-pulse = { git = "https://github.com/davidzeng0/xx-pulse" }
+xx-url = { git = "https://github.com/davidzeng0/xx-url" }
+xx-mpeg = { git = "https://github.com/davidzeng0/xx-mpeg" }
 
 [build-dependencies]
 prost-build = "0.12.1"
