@@ -29,7 +29,9 @@ cd ..
 #### Installation
 Make sure you have [cargo](https://rustup.rs) installed
 
-```cargo install --git https://github.com/davidzeng0/ying.git```
+```
+cargo install --git https://github.com/davidzeng0/ying.git
+```
 
 #### Run
 ```

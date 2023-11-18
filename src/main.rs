@@ -1,10 +1,10 @@
-use std::net::{SocketAddr, IpAddr, Ipv4Addr};
+use std::net::{IpAddr, Ipv4Addr, SocketAddr};
 
+use clap::{Parser, ValueEnum};
 use jemallocator::Jemalloc;
 use log::{set_max_level, LevelFilter};
 use xx_core::{error::*, info};
 use xx_pulse::*;
-use clap::{Parser, ValueEnum};
 
 mod node;
 pub use node::*;
@@ -70,7 +70,10 @@ async fn main() -> Result<()> {
 		let default_port = 5360;
 		let default_ip = IpAddr::V4(Ipv4Addr::new(127, 0, 0, 1));
 
-		SocketAddr::new(args.ip.unwrap_or(default_ip), args.port.unwrap_or(default_port))
+		SocketAddr::new(
+			args.ip.unwrap_or(default_ip),
+			args.port.unwrap_or(default_port)
+		)
 	};
 
 	let node = Node::bind(args.addr.unwrap_or(addr)).await?;
