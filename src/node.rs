@@ -1,4 +1,4 @@
-use std::net::SocketAddr;
+use std::net::{SocketAddr, ToSocketAddrs};
 
 use xx_core::{error, error::*};
 use xx_pulse::*;
@@ -12,8 +12,8 @@ pub struct Node {
 
 #[async_fn]
 impl Node {
-	pub async fn bind(addr: &str) -> Result<Self> {
-		let server = WebSocketServer::bind(addr, WebSocketOptions::new()).await?;
+	pub async fn bind<A: ToSocketAddrs>(addrs: A) -> Result<Self> {
+		let server = WebSocketServer::bind(addrs, WebSocketOptions::new()).await?;
 
 		Ok(Self { server })
 	}

@@ -22,6 +22,7 @@ chacha20poly1305 = { version = "0.10.1", features = ["std"] }
 crypto-common = { version = "0.1.6", features = ["std"] }
 aead = { version = "0.5.2", features = ["std"] }
 opus = "0.3.0"
+clap = { version = "4.4.8", features = ["derive"] }
 xx-core = { git = "https://github.com/davidzeng0/xx-core" }
 xx-pulse = { git = "https://github.com/davidzeng0/xx-pulse" }
 xx-url = { git = "https://github.com/davidzeng0/xx-url" }
