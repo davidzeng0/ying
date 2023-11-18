@@ -1,6 +1,5 @@
 use jemallocator::Jemalloc;
-use log::set_max_level;
-use xx_core::{error::Result, info};
+use xx_core::{error::*, info};
 use xx_pulse::*;
 
 mod node;
@@ -22,18 +21,12 @@ pub mod proto {
 #[global_allocator]
 static GLOBAL: Jemalloc = Jemalloc;
 
-#[async_fn]
-async fn start_node() -> Result<()> {
+#[main]
+async fn main() -> Result<()> {
 	let node = Node::bind("127.0.0.1:5360").await?;
 	let addr = node.local_addr().await?;
 
 	info!(target: &node, "== Listening on {}", addr);
 
 	node.run().await
-}
-
-fn main() {
-	let mut runtime = Runtime::new().unwrap();
-
-	runtime.block_on(start_node()).unwrap();
 }
