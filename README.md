@@ -1,6 +1,11 @@
 # ying
 
-Audio Player for Discord. (also see [xxlink](https://github.com/davidzeng0/xxlink))
+The fastest and highest quality audio player for Discord.
+
+Driven by a custom I/O engine and executed via ultra low overhead light threads,<br>
+this library performs up to 1400% faster than sange, and uses 1/3rds the memory.
+
+(also see previous projects: [xxlink](https://github.com/davidzeng0/xxlink) and [sange](https://github.com/davidzeng0/sange))
 
 This is only the server, similar to lavalink.<br>
 The server needs to be running in the background.
@@ -29,18 +34,21 @@ cd ..
 #### Installation
 Make sure you have [cargo](https://rustup.rs) installed
 
-```
+```bash
 cargo install --git https://github.com/davidzeng0/ying.git
 ```
 
 #### Run
-```
+```bash
 # Run ying
 ying
 
 # Show help
 ying --help
 
-# Bind custom ip
+# Bind custom ip (default 127.0.0.1)
 ying -i 0.0.0.0
+
+# Bind custom port (default 5360)
+ying -p 1337
 ```

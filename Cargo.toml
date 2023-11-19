@@ -30,3 +30,6 @@ xx-mpeg = { git = "https://github.com/davidzeng0/xx-mpeg" }
 
 [build-dependencies]
 prost-build = "0.12.1"
+
+[profile.release]
+lto = true
