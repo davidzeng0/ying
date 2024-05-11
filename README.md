@@ -1,4 +1,5 @@
 # ying
+This is currently a WIP. ETA: June/July 2024.
 
 The fastest and highest quality audio player for Discord.
 
