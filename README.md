@@ -11,8 +11,7 @@ this library performs up to 1400% faster than sange, and uses 1/3rds the memory.
 This is only the server, similar to lavalink.<br>
 The server needs to be running in the background.
 
-To use this with your bot, see the following list of client libraries
-- [Node.js](https://github.com/davidzeng0/ying-client-node) (ying-client-node)
+To use this with your bot, use the [client](https://github.com/davidzeng0/ying-client) library
 
 #### Requirements
 - Linux x86_64
