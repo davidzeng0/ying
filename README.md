@@ -13,36 +13,25 @@ The server needs to be running in the background.
 
 To use this with your bot, use the [client](https://github.com/davidzeng0/ying-client) library
 
-#### Requirements
-- Linux x86_64
-- Linux kernel >= 6.1 (check with `uname -a`)
+## Running
 
-#### Dependencies (Debian, Ubuntu, Pop_Os!) (other distros figure out yourself)
-```bash
-sudo apt install -y libopus-dev protobuf-compiler
+### Requirements
 
-# Compile FFmpeg latest (make sure all other versions are uninstalled, including the ones from apt)
-sudo apt install -y nasm
-git clone https://github.com/FFmpeg/FFmpeg
-cd FFmpeg
-./configure --arch=amd64 --enable-libopus --enable-shared
-make -j $(nproc)
-sudo make install
-cd ..
-```
+#### Linux users
+- Docker
+- Kernel >= 5.6 (check with `uname -a`, version 6.1 or later recommended for best performance)
 
-#### Installation
-Make sure you have [cargo](https://rustup.rs) installed
+#### Windows & Mac users
+- Docker (use linux for best performance)
 
-```bash
-cargo install --git https://github.com/davidzeng0/ying.git
-```
+```sh
+# Build docker image
+curl "https://raw.githubusercontent.com/davidzeng0/ying/main/Dockerfile" | docker build -t ying -f - .
 
-#### Run
-```bash
-# Run ying
-ying
+# Start ying
+docker run -d --restart always -p 5360:5360 ying [OPTIONS]
 
+# Options
 # Show help
 ying --help
 
