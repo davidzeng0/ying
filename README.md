@@ -1,5 +1,5 @@
 # ying
-This is currently a WIP. ETA: End of July 2024.
+This is currently a WIP. ETA: End of 2024.
 
 The fastest and highest quality audio player for Discord.
 
