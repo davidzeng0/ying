@@ -1,0 +1,33 @@
+name: Rust
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+    - name: Install dependencies
+      run: |
+        sudo apt install libopus-dev nasm protobuf-compiler
+        git clone https://github.com/FFmpeg/FFmpeg
+        cd FFmpeg
+        ./configure --arch=amd64 --disable-stripping --enable-libopus --enable-shared
+        make -j $(nproc)
+        sudo make install
+        cd ..
+    - name: Build
+      run: cargo build --verbose
+    - name: Run tests
+      run: cargo test --verbose
